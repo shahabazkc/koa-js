@@ -1,0 +1,19 @@
+{
+  "name": "koa-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-json": "^2.0.2",
+    "koa-router": "^10.1.1"
+  }
+}
