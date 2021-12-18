@@ -1,7 +1,7 @@
 const Koa = require('koa');
 const json = require('koa-json');
 const KoaRouter = require('koa-router');
-const route = require('./Routes/route');
+const ApiRoute = require('./Routes/route');
 const bodyParser = require('koa-bodyparser');
 
 const app = new Koa();
@@ -9,22 +9,12 @@ const app = new Koa();
 const router = new KoaRouter();
 
 
+
+
 app.use(json());
 app.use(bodyParser());
+app.use(ApiRoute.routes(),ApiRoute.allowedMethods());
 
-let users = [];
-
-//fetching user route
-router.get('/get-users', ctx => {
-  ctx.body = users;
-});
-
-//add user router
-router.post('/add-user', ctx => {
-  let username = ctx.request.body.user;
-  users.push(username);
-  ctx.body = users;
-})
 
 //Simple Middleware
 //app.use(async ctx => ctx.body = {msg:"Hello world my boy"});
