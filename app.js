@@ -2,6 +2,7 @@ const Koa = require('koa');
 const json = require('koa-json');
 const KoaRouter = require('koa-router');
 const ApiRoute = require('./Routes/route');
+const PostRoute = require('./Routes/postRoute')
 const bodyParser = require('koa-bodyparser');
 
 const app = new Koa();
@@ -13,8 +14,9 @@ const router = new KoaRouter();
 
 app.use(json());
 app.use(bodyParser());
-app.use(ApiRoute.routes(),ApiRoute.allowedMethods());
 
+app.use(ApiRoute.routes(),ApiRoute.allowedMethods());
+app.use(PostRoute.routes(),PostRoute.allowedMethods());
 
 //Simple Middleware
 //app.use(async ctx => ctx.body = {msg:"Hello world my boy"});
