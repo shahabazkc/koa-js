@@ -4,6 +4,9 @@ const KoaRouter = require('koa-router');
 
 const app = new Koa();
 
+const router = new KoaRouter();
+
+
 app.use(json());
 
 app.use(async ctx => ctx.body = {msg:"Hello world my boy"});
