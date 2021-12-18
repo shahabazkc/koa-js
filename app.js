@@ -14,10 +14,12 @@ app.use(bodyParser());
 
 let users = [];
 
+//fetching user route
 router.get('/get-users', ctx => {
   ctx.body = users;
 });
 
+//add user router
 router.post('/add-user', ctx => {
   let username = ctx.request.body.user;
   users.push(username);
